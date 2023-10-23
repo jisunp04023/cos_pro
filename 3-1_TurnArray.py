@@ -21,3 +21,25 @@ def func_c(first, second):
 		if first[i : i + length] == second:
 			return True
 	return False
+
+
+def solution(arrA, arrB):
+	if len(arrA) != len(arrB):
+		return False
+	if func_b(arrA, arrB):
+		arrA_temp = func_a(arrA)
+		if func_c(arrA_temp, arrB):
+			return True
+	return False
+
+arrA1 = [1, 2, 3, 4]
+arrB1 = [3, 4, 1, 2]
+ret1 = solution(arrA1, arrB1)
+
+print("solution 함수의 반환 값은", ret1, "입니다.")
+
+arrA2 = [1, 2, 3, 4]
+arrB2 = [1, 4, 2, 3]
+ret2 = solution(arrA2, arrB2)
+
+print("solution 함수의 반환 값은", ret2, "입니다.")
